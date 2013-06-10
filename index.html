@@ -1,12 +1,28 @@
 <html>
     <header>
+        <script src="http://knockoutjs.com/downloads/knockout-2.2.1.js"></script>
         <script src="knockout_eval.js"></script>
     </header>
-    <body>Name:
-        <input type="text" data-bind="value: name" />
-        <p>Hello,
-            <span data-bind="text: name"></span>
+    <body>
+    
+    
+        Name: <input type="text" data-bind="value: name, valueUpdate: 'afterkeydown'" />
+        <input type="checkbox" data-bind="checked: nameVisible" />
+        <p>
+            Hello, <span data-bind="text: name, visible: nameVisible"></span>
         </p>
         <button data-bind="click: changeName">Change Name</button>
+        
+        <h2>Types of Observables</h2>
+        <ul>
+            <li>Observable - Used for view model properties</li>
+            <li>Observable arrays - Used for collections</li>
+            <li>(computed) dependent observables - Used for encapsulate one or more other observables</li>
+        </ul>
+    
+    
+    
+    
+    
     </body>
 </html>
