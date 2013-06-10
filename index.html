@@ -3,7 +3,7 @@
         
         <script src="jquery-1.7.2.min.js"></script>
         <script src="knockout-2.2.1.js"></script>
-        <script src="knockout_eval.js"></script>
+        <!--<script src="knockout_eval.js"></script>-->
     </header>
     <body>
     
@@ -33,4 +33,28 @@
     
     
     </body>
+    
+    <script language="text/javascript">
+    
+    
+    
+$(function() {
+    var viewModel = {
+        name: "bob",
+        // nameVisible: ko.observable(true),
+        changeName: function() {
+            this.name = "ben";
+        }
+    };
+    
+    // viewModel.displayName = ko.dependentObservable(function(){
+    //     return this.name() + " is" + (!this.nameVisible() ? "not" : "") + ' visible';
+    // }, viewModel);
+    
+    ko.applyBindings(viewModel);//Important!
+    
+    console.log("TEST");
+});
+        
+    </script>
 </html>
